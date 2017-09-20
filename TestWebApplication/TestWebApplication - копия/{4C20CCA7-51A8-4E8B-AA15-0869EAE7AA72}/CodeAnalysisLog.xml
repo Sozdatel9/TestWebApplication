@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files\microsoft visual studio 10.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="10.0">
+ <Targets>
+  <Target Name="C:\Users\Администратор\AppData\Local\Temp\tmp9F9F.tmp.cadir\bin\App_Code.dll">
+   <Modules>
+    <Module Name="app_code.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="ConnectionClass" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#AddLog(System.String,System.Int32,System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Проверка запросов SQL на уязвимости безопасности" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-09-19 19:58:21Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\TestWebApplication - копия\App_Code" File="ConnectionClass.cs" Line="364">Строка запроса, переданная 'SqlCommand.CommandText.set(string)' в 'ConnectionClass.AddLog(string, int, string)', может содержать следующие переменные 'userId', 'DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss")', 'parameter', 'otherInfo'. Если любая из этих переменных может поступать из вводимых пользователем данных, рассмотрите возможность использования хранимой процедуры или параметризованного запроса SQL вместо построения запроса с помощью конкатенации строк.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#AddTask(Entities.Task,System.Int32)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Проверка запросов SQL на уязвимости безопасности" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-09-19 19:58:21Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\TestWebApplication - копия\App_Code" File="ConnectionClass.cs" Line="70">Строка запроса, переданная 'SqlCommand.CommandText.set(string)' в 'ConnectionClass.AddTask(Task, int)', может содержать следующие переменные 'task.Title', 'task.Content', 'DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss")'. Если любая из этих переменных может поступать из вводимых пользователем данных, рассмотрите возможность использования хранимой процедуры или параметризованного запроса SQL вместо построения запроса с помощью конкатенации строк.</Issue>
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\TestWebApplication - копия\App_Code" File="ConnectionClass.cs" Line="75">Строка запроса, переданная 'SqlCommand.CommandText.set(string)' в 'ConnectionClass.AddTask(Task, int)', может содержать следующие переменные 'userId'. Если любая из этих переменных может поступать из вводимых пользователем данных, рассмотрите возможность использования хранимой процедуры или параметризованного запроса SQL вместо построения запроса с помощью конкатенации строк.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#CompleteTask(System.Int32)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Проверка запросов SQL на уязвимости безопасности" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-09-19 19:58:21Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\TestWebApplication - копия\App_Code" File="ConnectionClass.cs" Line="89">Строка запроса, переданная 'SqlCommand.CommandText.set(string)' в 'ConnectionClass.CompleteTask(int)', может содержать следующие переменные 'DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss")', 'task_Id'. Если любая из этих переменных может поступать из вводимых пользователем данных, рассмотрите возможность использования хранимой процедуры или параметризованного запроса SQL вместо построения запроса с помощью конкатенации строк.</Issue>
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\TestWebApplication - копия\App_Code" File="ConnectionClass.cs" Line="101">Строка запроса, переданная 'SqlCommand.CommandText.set(string)' в 'ConnectionClass.CompleteTask(int)', может содержать следующие переменные 'base.ToString()'. Если любая из этих переменных может поступать из вводимых пользователем данных, рассмотрите возможность использования хранимой процедуры или параметризованного запроса SQL вместо построения запроса с помощью конкатенации строк.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DownloadLog()" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Ликвидировать объекты перед потерей области" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2017-09-19 19:58:21Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="c:\Projects\TestWebApplication - копия\App_Code" File="ConnectionClass.cs" Line="414">В методе 'ConnectionClass.DownloadLog()' объект 'new FileStream(Path.Combine(HttpContext.Current.Server.MapPath("~"), "Logs", fileName), FileMode.Create)' не уничтожается во всех возможных путях исключений. Следует вызвать метод System.IDisposable.Dispose для объекта 'new FileStream(Path.Combine(HttpContext.Current.Server.MapPath("~"), "Logs", fileName), FileMode.Create)' до того, как все ссылки на него будут находиться вне области действия.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetAllTasks(System.Int32)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Проверка запросов SQL на уязвимости безопасности" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-09-19 19:58:21Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\TestWebApplication - копия\App_Code" File="ConnectionClass.cs" Line="40">Строка запроса, переданная 'SqlCommand.CommandText.set(string)' в 'ConnectionClass.GetAllTasks(int)', может содержать следующие переменные 'userId'. Если любая из этих переменных может поступать из вводимых пользователем данных, рассмотрите возможность использования хранимой процедуры или параметризованного запроса SQL вместо построения запроса с помощью конкатенации строк.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#LoginUser(System.String,System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Проверка запросов SQL на уязвимости безопасности" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-09-19 19:58:21Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\TestWebApplication - копия\App_Code" File="ConnectionClass.cs" Line="194">Строка запроса, переданная 'SqlCommand.CommandText.set(string)' в 'ConnectionClass.LoginUser(string, string)', может содержать следующие переменные 'DateTime.Now', 'user.Id'. Если любая из этих переменных может поступать из вводимых пользователем данных, рассмотрите возможность использования хранимой процедуры или параметризованного запроса SQL вместо построения запроса с помощью конкатенации строк.</Issue>
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\TestWebApplication - копия\App_Code" File="ConnectionClass.cs" Line="165">Строка запроса, переданная 'SqlCommand.CommandText.set(string)' в 'ConnectionClass.LoginUser(string, string)', может содержать следующие переменные 'name'. Если любая из этих переменных может поступать из вводимых пользователем данных, рассмотрите возможность использования хранимой процедуры или параметризованного запроса SQL вместо построения запроса с помощью конкатенации строк.</Issue>
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\TestWebApplication - копия\App_Code" File="ConnectionClass.cs" Line="175">Строка запроса, переданная 'SqlCommand.CommandText.set(string)' в 'ConnectionClass.LoginUser(string, string)', может содержать следующие переменные 'name'. Если любая из этих переменных может поступать из вводимых пользователем данных, рассмотрите возможность использования хранимой процедуры или параметризованного запроса SQL вместо построения запроса с помощью конкатенации строк.</Issue>
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\TestWebApplication - копия\App_Code" File="ConnectionClass.cs" Line="183">Строка запроса, переданная 'SqlCommand.CommandText.set(string)' в 'ConnectionClass.LoginUser(string, string)', может содержать следующие переменные 'name'. Если любая из этих переменных может поступать из вводимых пользователем данных, рассмотрите возможность использования хранимой процедуры или параметризованного запроса SQL вместо построения запроса с помощью конкатенации строк.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#RegisterUser(Entities.User)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Проверка запросов SQL на уязвимости безопасности" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-09-19 19:58:21Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\TestWebApplication - копия\App_Code" File="ConnectionClass.cs" Line="226">Строка запроса, переданная 'SqlCommand.CommandText.set(string)' в 'ConnectionClass.RegisterUser(User)', может содержать следующие переменные 'user.Name'. Если любая из этих переменных может поступать из вводимых пользователем данных, рассмотрите возможность использования хранимой процедуры или параметризованного запроса SQL вместо построения запроса с помощью конкатенации строк.</Issue>
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\TestWebApplication - копия\App_Code" File="ConnectionClass.cs" Line="237">Строка запроса, переданная 'SqlCommand.CommandText.set(string)' в 'ConnectionClass.RegisterUser(User)', может содержать следующие переменные 'user.Name', 'user.Password'. Если любая из этих переменных может поступать из вводимых пользователем данных, рассмотрите возможность использования хранимой процедуры или параметризованного запроса SQL вместо построения запроса с помощью конкатенации строк.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UnCompleteTask(System.Int32)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Проверка запросов SQL на уязвимости безопасности" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-09-19 19:58:21Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\TestWebApplication - копия\App_Code" File="ConnectionClass.cs" Line="137">Строка запроса, переданная 'SqlCommand.CommandText.set(string)' в 'ConnectionClass.UnCompleteTask(int)', может содержать следующие переменные 'base.ToString()'. Если любая из этих переменных может поступать из вводимых пользователем данных, рассмотрите возможность использования хранимой процедуры или параметризованного запроса SQL вместо построения запроса с помощью конкатенации строк.</Issue>
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\TestWebApplication - копия\App_Code" File="ConnectionClass.cs" Line="125">Строка запроса, переданная 'SqlCommand.CommandText.set(string)' в 'ConnectionClass.UnCompleteTask(int)', может содержать следующие переменные 'task_Id'. Если любая из этих переменных может поступать из вводимых пользователем данных, рассмотрите возможность использования хранимой процедуры или параметризованного запроса SQL вместо построения запроса с помощью конкатенации строк.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UnsuccessfulAttempt()" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Проверка запросов SQL на уязвимости безопасности" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-09-19 19:58:21Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\TestWebApplication - копия\App_Code" File="ConnectionClass.cs" Line="319">Строка запроса, переданная 'SqlCommand.CommandText.set(string)' в 'ConnectionClass.UnsuccessfulAttempt()', может содержать следующие переменные 'DateTime.Now'. Если любая из этих переменных может поступать из вводимых пользователем данных, рассмотрите возможность использования хранимой процедуры или параметризованного запроса SQL вместо построения запроса с помощью конкатенации строк.</Issue>
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\TestWebApplication - копия\App_Code" File="ConnectionClass.cs" Line="326">Строка запроса, переданная 'SqlCommand.CommandText.set(string)' в 'ConnectionClass.UnsuccessfulAttempt()', может содержать следующие переменные 'DateTime.Now'. Если любая из этих переменных может поступать из вводимых пользователем данных, рассмотрите возможность использования хранимой процедуры или параметризованного запроса SQL вместо построения запроса с помощью конкатенации строк.</Issue>
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="c:\Projects\TestWebApplication - копия\App_Code" File="ConnectionClass.cs" Line="342">Строка запроса, переданная 'SqlCommand.CommandText.set(string)' в 'ConnectionClass.UnsuccessfulAttempt()', может содержать следующие переменные 'DateTime.Now'. Если любая из этих переменных может поступать из вводимых пользователем данных, рассмотрите возможность использования хранимой процедуры или параметризованного запроса SQL вместо построения запроса с помощью конкатенации строк.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="Ликвидировать объекты перед потерей области" Category="Microsoft.Reliability" CheckId="CA2000">
+   <Name>Ликвидировать объекты перед потерей области</Name>
+   <Description>Если освобождаемый объект не высвобождается явно до того, как все ссылки на него оказываются вне области имен, объект будет высвобожден в некоторый заранее не определенный момент, когда сборщик мусора запустит завершающий метод объекта. Так как может возникнуть событие исключения, препятствующее выполнению метода завершения объекта, объект будет ликвидирован в явной форме.</Description>
+   <Resolution Name="ExceptionEdge">В методе {0} объект {1} не уничтожается во всех возможных путях исключений. Следует вызвать метод System.IDisposable.Dispose для объекта {1} до того, как все ссылки на него будут находиться вне области действия.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182289(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="10.0.0.0" />
+  </Rule>
+  <Rule TypeName="Проверка запросов SQL на уязвимости безопасности" Category="Microsoft.Security" CheckId="CA2100">
+   <Name>Проверка запросов SQL на уязвимости безопасности</Name>
+   <Description>Командная строка SQL, создаваемая на основе введенных пользователем данных, уязвима к атакам типа "инъекция SQL". Microsoft SQL Server и другие серверы баз данных поддерживают хранимые процедуры и параметризованные SQL-запросы, что снижает риск атак путем внедрения.</Description>
+   <Resolution Name="WithNonLiterals">Строка запроса, переданная {0} в {1}, может содержать следующие переменные {2}. Если любая из этих переменных может поступать из вводимых пользователем данных, рассмотрите возможность использования хранимой процедуры или параметризованного запроса SQL вместо построения запроса с помощью конкатенации строк.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182310(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="10.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Категория</String>
+  <String Key="Certainty">Достоверность</String>
+  <String Key="CollapseAll">Свернуть все</String>
+  <String Key="CheckId">ИД проверки</String>
+  <String Key="Error">Ошибка</String>
+  <String Key="Errors">ошибки</String>
+  <String Key="ExpandAll">Развернуть все</String>
+  <String Key="Help">Справка</String>
+  <String Key="Line">Строка</String>
+  <String Key="Messages">сообщения</String>
+  <String Key="LocationNotStoredInPdb">[расположение не сохранено в PDB]</String>
+  <String Key="Project">Проект</String>
+  <String Key="Resolution">Разрешение</String>
+  <String Key="Rule">Правило</String>
+  <String Key="RuleFile">Файл правил</String>
+  <String Key="RuleDescription">Описание правила</String>
+  <String Key="Source">Источник</String>
+  <String Key="Status">Состояние</String>
+  <String Key="Target">Цель</String>
+  <String Key="Warning">Предупреждение</String>
+  <String Key="Warnings">предупреждения</String>
+  <String Key="ReportTitle">Отчет по анализу кода</String>
+ </Localized>
+</FxCopReport>

@@ -1,0 +1,9 @@
+Список пользователей:
+
+UserId	Имя	Пароль
+1	Alen	1234
+2	Stephen	9999
+3	Beavis	z1y2x3w4
+21	OliverTwist	2017
+23  Альберт 7ZfMgaY
+
